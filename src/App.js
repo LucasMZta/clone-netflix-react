@@ -5,8 +5,6 @@ import MovieRow from './components/movieRow';
 import FeaturedMovie from './components/featuredMovie';
 import Header from './components/header';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-
 
 const App = () => {
 
@@ -29,15 +27,6 @@ const App = () => {
       setFeaturedData(chosenInfo);
     }
 
-    //Progress bar
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to('progress', {
-      value: 100,
-      scrollTrigger: {
-        scrub: 0.5
-      }
-    });
-
     loadAll();
   }, []);
 
@@ -57,8 +46,6 @@ const App = () => {
 
   return (
     <>
-      <progress max='100' value='0'></progress>
-
       <div className='page'>
 
         <Header black={backHeader} />
